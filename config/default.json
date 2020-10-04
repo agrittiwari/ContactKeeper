@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://agrit123:agrit123@cluster0.xtf3a.mongodb.net/<dbname>?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://agrit123:agrit123@cluster0.xtf3a.mongodb.net/<dbname>?retryWrites=true&w=majority",
+  "jwtSecret": "secrets"
 }

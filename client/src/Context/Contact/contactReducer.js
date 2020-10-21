@@ -49,7 +49,7 @@ export default (state, action) =>{
         case CLEAR_FILTER:
             return{
                 ...state,
-                filteredt:null 
+                filtered:null 
             }
         default:
             return state;

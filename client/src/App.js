@@ -7,11 +7,13 @@ import Navbar from "./Components/Layouts/Navbar";
 
 
 import ContactState from './Context/Contact/ContactState'
+import AuthState from "./Context/Auth/AuthState";
 import "./App.css";
 
 const App = () => {
   return (
-    <ContactState>
+    <AuthState>
+<ContactState>
 <Router>
       <Fragment>
         <Navbar />
@@ -24,6 +26,8 @@ const App = () => {
       </Fragment>
     </Router>
     </ContactState>
+    </AuthState>
+    
     
   );
 };

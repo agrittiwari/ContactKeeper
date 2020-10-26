@@ -6,21 +6,26 @@ import About from "./Components/Pages/About";
 import Navbar from "./Components/Layouts/Navbar";
 import Register from './Components/Auth/Register';
 import Login from './Components/Auth/Login';
+import Alerts from './Components/Layouts/Alerts'
 
 
 
 import ContactState from './Context/Contact/ContactState'
 import AuthState from "./Context/Auth/AuthState";
+import AlertState from "./Context/Alert/AlertState";
+
 import "./App.css";
 
 const App = () => {
   return (
     <AuthState>
 <ContactState>
-<Router>
+  <AlertState>
+  <Router>
       <Fragment>
         <Navbar />
         <div className="container">
+          <Alerts/>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/Register" component={Register} />
@@ -30,6 +35,8 @@ const App = () => {
         </div>
       </Fragment>
     </Router>
+  </AlertState>
+
     </ContactState>
     </AuthState>
     

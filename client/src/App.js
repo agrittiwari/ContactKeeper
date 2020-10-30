@@ -13,12 +13,18 @@ import Alerts from './Components/Layouts/Alerts'
 import ContactState from './Context/Contact/ContactState'
 import AuthState from "./Context/Auth/AuthState";
 import AlertState from "./Context/Alert/AlertState";
+import setAuthToken from '../src/Utils/setAuthToken'
 
 import "./App.css";
 
+if(localStorage.token){
+  setAuthToken(localStorage.token)
+}
+
+
 const App = () => {
   return (
-    <AuthState>
+    <AuthState> 
 <ContactState>
   <AlertState>
   <Router>

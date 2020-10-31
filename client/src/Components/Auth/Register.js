@@ -37,7 +37,7 @@ const onChange =e => setUser({ ...user, [e.target.name]: e.target.value})
 
 const onSubmit = e => {
     e.preventDefault();
-    if(name == ''  || email == '' || password == ''){
+    if(name === ''  || email === '' || password === ''){
         setAlert('Please fill all the details', 'danger')
     }
     else if( password !== password2 ){

@@ -106,7 +106,7 @@ const register = async formData => {
 
 
     //Logout
-    const logout = () => console.log('logout');
+    const logout = () => dispatch({type: LOGOUT});
 
 
 

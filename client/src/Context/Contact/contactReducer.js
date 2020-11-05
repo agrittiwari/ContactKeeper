@@ -7,7 +7,8 @@ import {
     FILTER_CONTACTS,
     CLEAR_FILTER,
     CONTACT_ERROR,
-    GET_CONTACTS
+    GET_CONTACTS,
+    CLEAR_CONTACTS
 } from '../Types';
 
 
@@ -25,6 +26,14 @@ export default (state, action) =>{
                 contacts:[...state.contacts, action.payload  ],
                 loading:false  
             };
+        case CLEAR_CONTACTS:
+            return{
+                ...state,
+                contacts:null,
+                filtered: null,
+                error: null,
+                current: null
+            } 
 
         case DELETE_CONTACT:
             return {

@@ -8,7 +8,7 @@ import Spinner from '../Layouts/Spinner'
  const Contacts = () => {
     const contactContext = useContext(ContactContext);
 
-    const { contacts, filtered, getContacts, loading} =contactContext;
+    const { contacts, filtered, getContacts, loading } =contactContext;
 
     useEffect(() => {
         getContacts();

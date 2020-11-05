@@ -67,6 +67,11 @@ const ContactState = props => {
        
     }
 
+    //clear Contacts
+    const clearContacts =() => {
+        dispatch({ type: CLEAR_CONTACTS})
+    }
+
 
     //Delete Contact
 
@@ -121,7 +126,7 @@ const ContactState = props => {
             value={{
                 contacts: state.contacts,
                 getContacts,
-                
+                clearContacts,
                 addContact ,
                 deleteContact,
                 updateContact,

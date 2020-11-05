@@ -10,7 +10,7 @@ const ContactItem = ( {contact }) => {
   const { deleteContact, setCurrent, clearCurrent } = contactContext;
 
   const onDelete=() => {
-      deleteContact(id);
+      deleteContact(_id);
       clearCurrent()
   }
 
@@ -18,7 +18,7 @@ const ContactItem = ( {contact }) => {
     setCurrent(contact);
   }
 
-    const {id, name, email, phone, type} =contact;
+    const {_id, name, email, phone, type} =contact;
     return (
         <div className="card bg-light">
             <h3 className='text-primary text-left'>

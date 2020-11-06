@@ -10,9 +10,7 @@ connectDB();
 //Init middleware
 app.use(express.json({ extended: false }));
 
-app.get("/", (req, res) =>
-  res.json({ msg: " Welcome to JSOn method of response" })
-);
+
 
 //Define Routes
 

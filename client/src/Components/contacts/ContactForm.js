@@ -8,7 +8,7 @@ const contactContext = useContext(ContactContext);
 
 
 useEffect(() =>{
-    if(current != null){
+    if(current !== null){
         setContact(current);
     }else {
         setContact({
@@ -39,12 +39,13 @@ const onChange = e => setContact({ ...contact, [e.target.name]:e.target.value})
 const onSubmit = e =>{
     e.preventDefault();
 
-    if(current == null){
+    if(current === null){
         addContact(contact);
     }else {
- updateContact(contact)
+      updateContact(contact)
     }
-    
+    clearAll();
+
     setContact({
         name:'',
         email:'',

@@ -1,11 +1,12 @@
 import React, {useReducer } from 'react';
 import axios from 'axios';
 
-import {v4 as uuid}from 'uuid';
+//import {v4 as uuid}from 'uuid';
 import ContactContext  from'./contactContext';
 import contactReducer from './contactReducer';
 import {
-    GET_CONTACTS,ADD_CONTACT,
+    GET_CONTACTS,
+    ADD_CONTACT,
     DELETE_CONTACT,
     SET_CURRENT,
     CLEAR_CURRENT,
@@ -14,7 +15,7 @@ import {
     CLEAR_CONTACTS,
     CLEAR_FILTER,CONTACT_ERROR
 } from '../Types';
-import { startSession } from 'mongoose';
+//import { startSession } from 'mongoose';
 
 const ContactState = props => {
     const initialState = {
@@ -45,7 +46,7 @@ const ContactState = props => {
        
     }
 
-    //aDD cONTACT
+    //ADD cONTACT
 
     const addContact = async contact =>{
         const config = {
@@ -93,7 +94,32 @@ const ContactState = props => {
      
        
     }
+ 
+     //Update Contact
 
+     const updateContact= async contact =>{
+        const config = {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        } 
+       //dummy id
+        // contact.id = uuid();
+        try{
+            const res = await axios.put(`/api/contacts/${contact._id}`, contact, config);
+            dispatch({
+                 type: UPDATE_CONTACT,
+                  payload:res.data 
+                })
+        }catch(err){
+            dispatch({
+                type: CONTACT_ERROR,
+                payload: err.response.msg
+            })
+
+        }
+       
+      }
 
 
     //SetCurrent Contact
@@ -112,11 +138,7 @@ const ContactState = props => {
 
 
 
-    //Update Contact
-
-    const updateContact= contact =>{
-        dispatch({ type: UPDATE_CONTACT, payload:contact })
-      }
+   
   
 
 

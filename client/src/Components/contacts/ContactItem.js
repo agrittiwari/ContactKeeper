@@ -16,6 +16,7 @@ const ContactItem = ( {contact }) => {
 
   const onCurrent =() => {
     setCurrent(contact);
+    
   }
 
     const {_id, name, email, phone, type} =contact;

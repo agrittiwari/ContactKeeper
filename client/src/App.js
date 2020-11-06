@@ -14,7 +14,7 @@ import ContactState from './Context/Contact/ContactState'
 import AuthState from "./Context/Auth/AuthState";
 import AlertState from "./Context/Alert/AlertState";
 import setAuthToken from '../src/Utils/setAuthToken'
-
+import footer from "./Components/Layouts/footer"
 
 import PrivateRoute from  './Components/Routing/PrivateRoute';
 import "./App.css";
@@ -41,6 +41,7 @@ const App = () => {
             <Route exact path="/About" component={About} />
           </Switch>
         </div>
+        <footer/>
       </Fragment>
     </Router>
   </AlertState>

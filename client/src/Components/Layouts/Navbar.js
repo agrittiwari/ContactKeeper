@@ -29,7 +29,8 @@ const authLinks = (
       </a>
     </li>
   </Fragment>
-)
+  )
+ 
 
 const guestLinks = (
   <Fragment>
@@ -43,6 +44,7 @@ const guestLinks = (
 )
 
   return (
+    <Fragment>
     <div className="navbar bg-primary">
       <h1>
         <i className={icon} />
@@ -52,6 +54,8 @@ const guestLinks = (
          {isAuthenticated ? authLinks : guestLinks}
       </ul>
     </div>
+    <Footer/>
+    </Fragment>
   );
 };
 
@@ -64,5 +68,23 @@ Navbar.defaultProps = {
   title: "Contact Keeper",
   icon: "fas fa-id-card-alt",
 };
+const Footer = () =>{
+ return( <div className="navbar-bottom bg-primary">
+      <ul>
+     <i className="fas fa-user-astronaut"></i>
+          <a href="https://github.com/agrittiwari/ContactKeeper" >
+              <span className="hide-sm form-container copyright ">
+              By Agrit Tiwari
+              </span>
+     </a>
+     <ul><a href="https://tech-blog.agrittiwari.com">
+     <span className="hide-sm form-container copyright ">
+              Read Blog here
+              </span>
+     </a></ul>
+      </ul>
+  </div>
+)
+}
 
 export default Navbar;

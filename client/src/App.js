@@ -8,8 +8,6 @@ import Register from './Components/Auth/Register';
 import Login from './Components/Auth/Login';
 import Alerts from './Components/Layouts/Alerts'
 
-
-
 import ContactState from './Context/Contact/ContactState'
 import AuthState from "./Context/Auth/AuthState";
 import AlertState from "./Context/Alert/AlertState";
